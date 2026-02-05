@@ -1,0 +1,2 @@
+invalid type: string "- Emits monochromatic light\n- Emits coherent light\n- Exhibits directionality\n- Operates based on stimulated emission\n- Requires population inversion\n- Utilizes a gain medium\n- Incorporates an optical resonator", expected a booleanon (precision)", expected f64ooleanon_metadata ADD COLUMN bool_value INTEGER;
+ALTER TABLE segment_metadata ADD COLUMN bool_valÿÿÿX~L)ÿÿÿÿÿÿÿÿ

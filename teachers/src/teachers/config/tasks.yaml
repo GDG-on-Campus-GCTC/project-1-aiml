@@ -1,0 +1,54 @@
+research_task:
+  description: >
+    You MUST use the retriever_tool BEFORE writing any response.
+
+    Step 1: Call the retriever_tool with a query related to "{topic}".
+    Step 2: Carefully read the retrieved document content.
+    Step 3: Base your ENTIRE response ONLY on the retrieved content.
+
+    Do NOT rely on prior knowledge.
+    Do NOT hallucinate or add information not present in the documents.
+    If relevant information is not found, explicitly say
+    "Not found in the provided documents".
+
+    Conduct research on the topic "{topic}" for undergraduate
+    engineering students, considering the current year as {current_year}.
+    also mainly focus only the content which is retrieved not what you know
+    if in a case you are not getting result based on tools but the matter is regarding studies 
+    you give the most appropriate and best answer rather then then giving wrong answer ok you can use youare knowlwdge only 
+    if tool output is wrong
+
+  expected_output: >
+    A well-structured list of EXACTLY 10 concise bullet points.
+    Each bullet point MUST be grounded in the retrieved documents.
+  agent: internal
+
+
+reporting_task:
+  description: >
+    You MUST use the retriever_tool BEFORE generating any questions.
+
+    Step 1: Call the retriever_tool to retrieve document context
+    relevant to "{topic}" and the research output.
+    Step 2: Use ONLY the retrieved document content and the
+    internal faculty’s research output.
+    Step 3: Generate exam-oriented questions strictly based
+    on this information.
+
+    Do NOT use general knowledge.
+    Do NOT invent syllabus trends or questions not supported
+    by the retrieved documents.
+    just use tools the output should be 90 percent based on tools 
+    if in a case you are not getting result based on tools but the matter is regarding studies 
+    you give the most appropriate and best answer rather then then giving wrong answer ok you can use youare knowlwdge only 
+    if tool output is wrong
+
+    Generate high-probability exam questions aligned with
+    Hyderabad-based engineering colleges (JNTU, Osmania, autonomous).
+
+  expected_output: >
+    A comprehensive set of exam-oriented questions categorized
+    by marks (2, 5, 10, or 15 marks), grounded strictly in
+    the retrieved documents.
+  agent: external
+
