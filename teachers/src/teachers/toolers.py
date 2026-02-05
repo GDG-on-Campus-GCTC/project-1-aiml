@@ -5,9 +5,6 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from crewai.tools import tool
 
-# --------------------------------------------------
-# Absolute path (IMPORTANT)
-# --------------------------------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEXT_FILE = os.path.join(BASE_DIR, "output1 (2).txt")
 

@@ -29,7 +29,7 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': "explain me linked list in C ",
+        'topic': "explain me what is lasers in physics",
         'current_year': str(datetime.now().year)
     }
     r=Teachers().crewcall()

@@ -1,54 +1,86 @@
 research_task:
   description: >
-    You MUST use the retriever_tool BEFORE writing any response.
+    YOU MUST USE the retriever_tool BEFORE writing any response.
 
+    MANDATORY PROCESS:
     Step 1: Call the retriever_tool with a query related to "{topic}".
-    Step 2: Carefully read the retrieved document content.
-    Step 3: Base your ENTIRE response ONLY on the retrieved content.
+    Step 2: Carefully read and understand the retrieved document content.
+    Step 3: Write your response based STRICTLY on the retrieved content.
 
-    Do NOT rely on prior knowledge.
-    Do NOT hallucinate or add information not present in the documents.
-    If relevant information is not found, explicitly say
-    "Not found in the provided documents".
+    STRICT CONTENT RULES:
+    - Do NOT rely on prior knowledge.
+    - Do NOT hallucinate or invent information.
+    - Do NOT add facts that are not present in the retrieved documents.
+    - If required information is NOT found, explicitly state:
+      "Not found in the provided documents".
 
-    Conduct research on the topic "{topic}" for undergraduate
-    engineering students, considering the current year as {current_year}.
-    also mainly focus only the content which is retrieved not what you know
-    if in a case you are not getting result based on tools but the matter is regarding studies 
-    you give the most appropriate and best answer rather then then giving wrong answer ok you can use youare knowlwdge only 
-    if tool output is wrong
+    FALLBACK RULE (VERY IMPORTANT):
+    - Use your own general knowledge ONLY IF:
+        a) The retriever_tool returns no content, OR
+        b) The retrieved content is clearly incorrect or misleading.
+    - This fallback must be used ONLY to avoid giving a wrong academic answer.
+
+    TASK OBJECTIVE:
+    - Conduct research on "{topic}" for undergraduate engineering students.
+    - Consider the current academic year as {current_year}.
+    - Focus mainly and preferably ONLY on retrieved content.
+    - Do NOT generate questions.
+    - Provide ONLY conceptual/theoretical information.
 
   expected_output: >
     A well-structured list of EXACTLY 10 concise bullet points.
-    Each bullet point MUST be grounded in the retrieved documents.
+    Each bullet point MUST be grounded in the retrieved documents
+    (unless the fallback rule is explicitly triggered).
   agent: internal
 
 
 reporting_task:
   description: >
-    You MUST use the retriever_tool BEFORE generating any questions.
+    YOU MUST USE the retriever_tool BEFORE generating any output.
 
-    Step 1: Call the retriever_tool to retrieve document context
-    relevant to "{topic}" and the research output.
-    Step 2: Use ONLY the retrieved document content and the
-    internal faculty’s research output.
-    Step 3: Generate exam-oriented questions strictly based
-    on this information.
+    MANDATORY PROCESS:
+    Step 1: Call the retriever_tool to retrieve document content
+            relevant to "{topic}".
+    Step 2: Review both:
+            a) Retrieved document content, and
+            b) Internal faculty’s research output.
+    Step 3: Decide the response mode STRICTLY based on user intent.
 
-    Do NOT use general knowledge.
-    Do NOT invent syllabus trends or questions not supported
-    by the retrieved documents.
-    just use tools the output should be 90 percent based on tools 
-    if in a case you are not getting result based on tools but the matter is regarding studies 
-    you give the most appropriate and best answer rather then then giving wrong answer ok you can use youare knowlwdge only 
-    if tool output is wrong
+    RESPONSE DECISION RULES (NON-NEGOTIABLE):
+    - If the user EXPLICITLY asks for:
+        "important questions", "exam questions", "probable questions",
+        "long answer questions", "short answer questions":
+        → Generate ONLY exam-oriented questions.
+    - If the user asks for concepts, explanations, or theory:
+        → Explain the concept clearly.
+        → DO NOT generate any questions.
 
-    Generate high-probability exam questions aligned with
-    Hyderabad-based engineering colleges (JNTU, Osmania, autonomous).
+    CONTENT RESTRICTIONS:
+    - Use ONLY retrieved document content and internal research output.
+    - Do NOT invent syllabus trends or unsupported questions.
+    - Do NOT use general knowledge by default.
+
+    FALLBACK RULE:
+    - Use general knowledge ONLY IF:
+        a) retriever_tool returns no useful data, OR
+        b) retrieved data is academically incorrect.
+    - Use fallback ONLY to avoid giving a wrong study-related answer.
+
+    ACADEMIC ALIGNMENT:
+    - Align content with Hyderabad-based engineering colleges
+      (JNTU, Osmania, Autonomous).
+
+    QUALITY REQUIREMENT:
+    - At least 90% of the final output must be based on tool results.
+    - Never mix theory explanations with question lists.
 
   expected_output: >
-    A comprehensive set of exam-oriented questions categorized
-    by marks (2, 5, 10, or 15 marks), grounded strictly in
-    the retrieved documents.
+    If questions are requested:
+    - A structured set of exam-oriented questions categorized by
+      2, 5, 10, or 15 marks, grounded in retrieved documents.
+
+    If theory is requested:
+    - A clear, student-friendly conceptual explanation
+      with NO questions included.
   agent: external
 
