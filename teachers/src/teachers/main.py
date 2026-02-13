@@ -29,7 +29,7 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': "explain me what is lasers in physics",
+        'topic': "explain me hapoop and its components in 4 th year ",
         'current_year': str(datetime.now().year)
     }
     r=Teachers().crewcall()
@@ -37,4 +37,13 @@ def run():
     print(result.raw)
 if __name__=="__main__":
     run()
-
+"""
+def query(input):
+    inputs={
+        'topic': input,
+        'current_year': str(datetime.now().year)
+    }
+    r=Teachers().crewcall()
+    result=r.kickoff(inputs=inputs)
+    return result.raw
+"""

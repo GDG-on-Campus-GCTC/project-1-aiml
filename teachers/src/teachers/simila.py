@@ -1,3 +1,5 @@
+"""
+Docstring for teachers.simila
 import os
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -29,9 +31,8 @@ retriever = vectorstore.as_retriever(
 
 @tool("retriever_tool")
 def retriever_tool(query: str) -> str:
-    """
-    Retrieve relevant chunks from FAISS vector database
-    """
+    
+    #Retrieve relevant chunks from FAISS vector database
 
     docs = retriever.invoke(query)
 
@@ -41,4 +42,4 @@ def retriever_tool(query: str) -> str:
     return "\n\n".join(
         f"[Source: {d.metadata.get('source', 'unknown')} | Page: {d.metadata.get('page', 'NA')}]\n{d.page_content}"
         for d in docs
-    )
+    )"""

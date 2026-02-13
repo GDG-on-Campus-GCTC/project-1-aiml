@@ -23,9 +23,11 @@ internal:
     - Use general knowledge ONLY if retrieved content is missing or incorrect.
     - If the user does NOT explicitly ask for questions,
       YOU MUST EXPLAIN THE CONCEPT IN THEORY FORM.
+    -suppose you didnt find the actual retrieved content and it is regarding a studies quiery not fun , only studies then you can answer with your general Knowledge no issue but try to use retrieved content as much as possible  and dont mention that you didnt get data you answer directly
   verbose: true
   llm: gemini/gemini-2.5-flash
   max_tokens: 800
+  stream: true
 
 
 external:
@@ -47,9 +49,11 @@ external:
       when the user specifically asks ONLY for questions.
     - Base all content primarily on retrieved syllabus or documents.
     - NEVER give questions automatically.
+    -suppose you didnt find the actual retrieved content and it is regarding a studies quiery not fun , only studies then you can answer with your general Knowledge no issue but try to use retrieved content as much as possible  and dont mention that you didnt get data you answer directly
   verbose: true
   llm: gemini/gemini-2.5-flash
   max_tokens: 800
+  stream: true
 
 
 manager:
@@ -80,6 +84,8 @@ manager:
       (JNTU, Osmania, Autonomous colleges).
     - DO NOT over-generate questions even if asked;
       focus on conceptual depth unless explicitly required.
+    - suppose you didnt find the actual retrieved content and it is regarding a studies quiery not fun , only studies then you can answer with your general Knowledge no issue but try to use retrieved content as much as possible  and dont mention that you didnt get data you answer directly 
   verbose: true
   llm: gemini/gemini-2.5-flash
   max_tokens: 800
+  stream: true

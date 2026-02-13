@@ -1,10 +1,9 @@
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
-from teachers.tooler import caller
-from teachers.toolers import callers
-from teachers.simila import retriever_tool
-from teachers.similar import retriever_toolonetwo
-from teachers.tooler import retriever_tooltwo
+from teachers.similar import retriever_tooltwo
+from teachers.tooler import retriever_tooltwot
+from teachers.toolers import retriever_toolthree
+from teachers.fourth import retriever_toolfour
 from crewai.memory import ShortTermMemory, LongTermMemory, EntityMemory
 from crewai.memory.storage.ltm_sqlite_storage import LTMSQLiteStorage
 from crewai.memory.storage.rag_storage import RAGStorage
@@ -17,11 +16,11 @@ class Teachers():
 
     @agent
     def internal(self) -> Agent:
-        return Agent(config=self.agents_config["internal"], tools=[retriever_tool,retriever_toolonetwo,retriever_tooltwo])
+        return Agent(config=self.agents_config["internal"], tools=[retriever_toolfour,retriever_tooltwot,retriever_tooltwo,retriever_toolthree])
 
     @agent
     def external(self) -> Agent:
-        return Agent(config=self.agents_config["external"], tools=[retriever_tool,retriever_toolonetwo,retriever_tooltwo])
+        return Agent(config=self.agents_config["external"], tools=[retriever_toolfour,retriever_tooltwot,retriever_tooltwo,retriever_toolthree])
 
     @task
     def research_task(self) -> Task:

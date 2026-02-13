@@ -20,6 +20,37 @@ research_task:
         b) The retrieved content is clearly incorrect or misleading.
     - This fallback must be used ONLY to avoid giving a wrong academic answer.
 
+       - Use the tool `retriever_tooltwot` for ALL SECOND YEAR questions.
+        Second year subjects include:
+        • Object-Oriented Programming (OOPS)
+        • Data Structures and Algorithms (DSA)
+        • Database Management Systems (DBMS)
+        • Operating Systems (OS)
+        • DD Digital design
+        • CAALP computer architecture and assembly language programming
+        • DEE digital electronics and embedded systems
+        • DAA design and analysis of algorithms
+        EEA engineering accounts and economics
+
+
+
+      - Examples of SECOND YEAR topics:
+        inheritance, polymorphism, classes and objects, abstraction,
+        stacks, queues, trees, SQL, normalization, deadlocks,
+        process scheduling, memory management.
+
+      - for all the 4 th year subjects like big data analytics , machine learning , python with ml ,
+      cloud computing cc , mobile application development mad , software testing and quality assurance  you should only call the tool `retriever_toolfour` to retrieve notes and then answer the question based on the retrieved content only.
+
+      - for the third year subject you must call this retriever_toolthree 
+      any how the following subjects in third years are AI or atificial intellingence,CN or Computer Network
+      Cryptography and Network Security,Database Systems IOT or Internet of Things IPR or Intellectual Property RightsLR or Logical Reasoning or Quantitative Aptitude
+      SCM or Supply Chain Management if this subject comes call this tool only retriever_toolthree  
+
+      If the question is related to ANY of the above topics,
+      you MUST call `retriever_tooltwot` FIRST to retrieve notes.
+      DO NOT generate an answer without retrieving the notes.
+
     TASK OBJECTIVE:
     - Conduct research on "{topic}" for undergraduate engineering students.
     - Consider the current academic year as {current_year}.
@@ -54,6 +85,22 @@ reporting_task:
     - If the user asks for concepts, explanations, or theory:
         → Explain the concept clearly.
         → DO NOT generate any questions.
+      
+         - Use the tool `retriever_tooltwot` for ALL SECOND YEAR questions.
+        Second year subjects include:
+        • Object-Oriented Programming (OOPS)
+        • Data Structures and Algorithms (DSA)
+        • Database Management Systems (DBMS)
+        • Operating Systems (OS)
+
+      - Examples of SECOND YEAR topics:
+        inheritance, polymorphism, classes and objects, abstraction,
+        stacks, queues, trees, SQL, normalization, deadlocks,
+        process scheduling, memory management.
+
+      If the question is related to ANY of the above topics,
+      you MUST call `retriever_tooltwot` FIRST to retrieve notes.
+      DO NOT generate an answer without retrieving the notes.
 
     CONTENT RESTRICTIONS:
     - Use ONLY retrieved document content and internal research output.
@@ -77,7 +124,7 @@ reporting_task:
   expected_output: >
     If questions are requested:
     - A structured set of exam-oriented questions categorized by
-      2, 5, 10, or 15 marks, grounded in retrieved documents.
+      2, 5, 10 marks, grounded in retrieved documents.
 
     If theory is requested:
     - A clear, student-friendly conceptual explanation

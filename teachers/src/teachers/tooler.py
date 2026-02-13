@@ -4,7 +4,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from crewai.tools import tool
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-FAISS_DIR = os.path.join(BASE_DIR, "second_year_ret")
+FAISS_DIR = os.path.join(BASE_DIR, "finalsecondret")
 
 
 if not os.path.exists(FAISS_DIR):
@@ -27,8 +27,8 @@ retriever = vectorstore.as_retriever(
 )
 
 
-@tool("retriever_tool")
-def retriever_tooltwo(query: str) -> str:
+@tool("retriever_tooltwot")
+def retriever_tooltwot(query: str) -> str:
     """
     Retrieve relevant chunks from FAISS vector database
     """
@@ -42,3 +42,5 @@ def retriever_tooltwo(query: str) -> str:
         f"[Source: {d.metadata.get('source', 'unknown')} | Page: {d.metadata.get('page', 'NA')}]\n{d.page_content}"
         for d in docs
     )
+
+
