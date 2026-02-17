@@ -131,3 +131,16 @@ reporting_task:
       with NO questions included.
   agent: external
 
+
+quick_answer_task:
+  description: >
+    1. Identify the year from the input (e.g., "4th year", "2nd year").
+    2. Select the appropriate retriever tool.
+    3. Retrieve relevant information.
+    4. Answer the user's question DIRECTLY.
+    5. process the retrieved content and Combine it with your own knowledge to provide the most complete and accurate answer possible.
+    6. Do not be restricted ONLY to the retrieved text if it is lacking.
+  expected_output: >
+    A concise, accurate, and complete answer to the user's question.
+  agent: tutor
+

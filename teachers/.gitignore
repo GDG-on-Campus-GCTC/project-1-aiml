@@ -1,3 +1,104 @@
-.env
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Environment variables
+.env
+*.env
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 .DS_Store
+
+# CrewAI specific
+.crewai/
+db/
+*.db
+*.sqlite
+*.sqlite3
+
+# Memory and ChromaDB (local agent memory)
+memory/
+knowledge/
+*.bin
+chromadb*/
+chroma.sqlite3
+data_level*.bin
+header.bin
+length.bin
+link_lists.bin
+
+# Local development files
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# FAISS indexes and vector stores
+*.faiss
+*.index
+faiss_index/
+vector_store/
+embeddings/
+
+# Model cache
+.cache/
+models/
+checkpoints/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# OS specific
+Thumbs.db
+.DS_Store
+
+# Redis dumps
+dump.rdb
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json

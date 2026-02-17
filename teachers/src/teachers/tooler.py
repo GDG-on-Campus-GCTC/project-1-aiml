@@ -1,6 +1,6 @@
 import os
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from crewai.tools import tool
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
