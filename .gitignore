@@ -22,14 +22,16 @@ Thumbs.db
 .vscode/
 .idea/
 
-# CrewAI / Memory
-memory/
-knowledge/
+# CrewAI / Memory / Databases
+**/memory/
+**/knowledge/
 *.bin
-chromadb*/
 *.db
 *.sqlite
 *.sqlite3
+**/chroma*/
+**/chroma_db/
+
 
 # Local tools
 uv.lock
